@@ -1,0 +1,10 @@
+name: readme-check
+on:
+  pull_request:
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: README has no FAIL marker
+        run: "! grep -q FAIL-ME README.md"
